@@ -4,290 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talha Masood Khan - Senior Full Stack Developer</title>
+    <meta name="description" content="Senior Full Stack Developer | Laravel + Inertia.js + React. 15+ years building production systems that work and last.">
+    <meta property="og:title" content="Talha Masood Khan - Senior Full Stack Developer">
+    <meta property="og:description" content="15+ years building production systems that work and last.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://talhamasoodkhan.vercel.app/">
+    <meta name="theme-color" content="#F8FAF8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0E1411" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231D6A48'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23F8FAF8'%3ETK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        paper: 'rgb(var(--paper) / <alpha-value>)',
+                        ink: 'rgb(var(--ink) / <alpha-value>)',
+                        'ink-2': 'rgb(var(--ink-2) / <alpha-value>)',
+                        'ink-3': 'rgb(var(--ink-3) / <alpha-value>)',
+                        rule: 'rgb(var(--rule) / <alpha-value>)',
+                        accent: 'rgb(var(--accent) / <alpha-value>)',
+                    },
+                    maxWidth: {
+                        page: '72rem',
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        /* One neutral family tinted toward the accent, one accent, light and dark. */
+        :root {
+            --paper: 248 250 248;
+            --ink: 20 32 26;
+            --ink-2: 75 90 82;
+            --ink-3: 122 135 127;
+            --rule: 220 228 222;
+            --accent: 29 106 72;
+            color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --paper: 14 20 17;
+                --ink: 231 237 233;
+                --ink-2: 168 182 174;
+                --ink-3: 116 130 122;
+                --rule: 40 51 45;
+                --accent: 104 196 148;
+                color-scheme: dark;
+            }
+        }
+        html { scroll-behavior: smooth; }
+        body { text-rendering: optimizeLegibility; }
+        h1, h2, h3 { text-wrap: balance; }
+        p, li, dd { text-wrap: pretty; }
+        .tabular { font-variant-numeric: tabular-nums; }
+        /* Status labels are written in capitals in the source; show them in sentence case. */
+        .label-case { display: inline-block; text-transform: lowercase; }
+        .label-case::first-letter { text-transform: uppercase; }
+        /* Tech stack reads as one line of a statement, not a row of chips. */
+        .stack li + li::before { content: "\00B7"; margin: 0 .55em; color: rgb(var(--ink-3)); }
+        /* The one authored moment: the header's closing double rule is drawn once. */
+        @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        .draw { transform-origin: left; animation: draw 1000ms cubic-bezier(.6, 0, .2, 1) 200ms both; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .draw { animation: none; }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
-    <header class="gradient-bg text-white py-16">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-4xl font-bold mb-2">Talha Masood Khan</h1>
-            <p class="text-xl text-blue-200 mb-4">Senior Full Stack Developer | Laravel + Inertia.js + React</p>
-            <p class="text-lg opacity-90">15+ years building production systems that work and last</p>
-            <div class="mt-6 flex flex-wrap gap-4 text-sm">
-                <a href="mailto:kkhan.talha@gmail.com" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition">kkhan.talha@gmail.com</a>
-                <a href="https://github.com/talhamasoodkhan" target="_blank" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition">github.com/talhamasoodkhan</a>
-                <span class="bg-white/20 px-4 py-2 rounded-lg">Lahore, Pakistan (GMT+5)</span>
-            </div>
-        </div>
+<body class="bg-paper font-sans text-ink antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-20 focus:rounded-[3px] focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-10 border-b border-rule bg-paper/95">
+        <nav aria-label="Sections" class="mx-auto flex max-w-page items-center justify-between gap-6 px-6 py-3 lg:px-10">
+            <a href="#top" class="text-[15px] font-semibold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Talha Masood Khan</a>
+            <ul class="hidden items-center gap-7 text-sm font-medium text-ink-2 md:flex">
+                <li><a href="#about" class="transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">About</a></li>
+                <li><a href="#projects" class="transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Projects</a></li>
+                <li><a href="#skills" class="transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Skills</a></li>
+                <li><a href="#work" class="transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Work History</a></li>
+            </ul>
+            <a href="mailto:kkhan.talha@gmail.com" class="rounded-[3px] bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors duration-200 hover:bg-accent active:translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Email</a>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-6 py-12">
+    <main id="main">
+        <!-- Header -->
+        <section id="top" class="relative overflow-hidden">
+            <div class="relative mx-auto grid max-w-page gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:px-10 lg:pb-24 lg:pt-28">
+                <div class="lg:col-span-8">
+                    <h1 class="text-5xl font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-[4.75rem]">Talha Masood Khan</h1>
+                    <p class="mt-6 text-lg font-medium text-ink-2 sm:text-xl">Senior Full Stack Developer | Laravel + Inertia.js + React</p>
+                    <p class="mt-5 max-w-[28ch] text-2xl font-normal leading-snug tracking-[-0.01em] sm:text-[1.75rem]">15+ years building production systems that work and last</p>
+                </div>
+                <div class="self-end lg:col-span-4">
+                    <ul class="divide-y divide-rule border-y border-rule text-[15px]">
+                        <li class="flex items-center gap-3 py-3">
+                            <span class="h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
+                            <span class="font-medium">Open to remote opportunities</span>
+                        </li>
+                        <li class="py-3">
+                            <a href="mailto:kkhan.talha@gmail.com" class="underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">kkhan.talha@gmail.com</a>
+                        </li>
+                        <li class="py-3">
+                            <a href="https://github.com/talhamasoodkhan" target="_blank" class="underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">github.com/talhamasoodkhan</a><span class="text-ink-2" aria-hidden="true"> &#8599;</span>
+                        </li>
+                        <li class="py-3 text-ink-2">Lahore, Pakistan (GMT+5)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mx-auto max-w-page px-6 lg:px-10">
+                <div class="draw h-[4px] border-y border-ink"></div>
+            </div>
+        </section>
 
         <!-- About -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 text-gray-900">About</h2>
-            <p class="text-lg leading-relaxed">
-                Building production systems that work and last. The checkout system below is <strong>currently live processing real payments</strong>.
-                The fee manager has been <strong>running in production for 10+ years</strong>. Strong focus on understanding requirements,
+        <section id="about" class="mx-auto max-w-page scroll-mt-16 px-6 lg:px-10">
+            <div class="grid gap-x-12 gap-y-5 pb-20 pt-16 lg:grid-cols-12 lg:pt-20">
+            <h2 class="text-[1.75rem] font-semibold leading-tight tracking-[-0.02em] lg:col-span-3">About</h2>
+            <p class="max-w-[60ch] text-xl leading-relaxed lg:col-span-9 lg:text-[1.35rem] lg:leading-[1.6]">
+                Building production systems that work and last. The checkout system below is <strong class="font-semibold">currently live processing real payments</strong>.
+                The fee manager has been <strong class="font-semibold">running in production for 10+ years</strong>. Strong focus on understanding requirements,
                 designing architecture, and delivering reliable software.
             </p>
+        </div>
         </section>
 
         <!-- Projects -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900">Featured Projects</h2>
+        <section id="projects" class="mx-auto max-w-page scroll-mt-16 px-6 lg:px-10">
+            <div class="grid gap-x-12 gap-y-6 border-t border-rule pb-20 pt-16 lg:grid-cols-12 lg:pt-20">
+            <h2 class="text-[1.75rem] font-semibold leading-tight tracking-[-0.02em] lg:col-span-3">Featured Projects</h2>
+            <div class="divide-y divide-rule lg:col-span-9">
 
-            <!-- Checkout System -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-green-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">LIVE IN PRODUCTION</span>
-                    <a href="https://go.checkout.almaghrib.org/quranflow" target="_blank" class="text-green-600 hover:text-green-800 text-xs font-medium underline">View Live</a>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Checkout System</h3>
-                <p class="text-gray-600 mb-4">
-                    Full-stack checkout system for a US-based educational platform. Currently processing real payments for live users.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- Laravel backend with Inertia.js bridging to React frontend</li>
-                        <li>- Stripe integration for payment processing</li>
-                        <li>- External API integrations</li>
-                        <li>- Full checkout flow: cart, payment, confirmation</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Inertia.js</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Stripe</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">TypeScript</span>
-                </div>
-            </div>
+                <!-- Checkout System -->
+                <article class="pb-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">Checkout System</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-accent">LIVE IN PRODUCTION</span>
+                            <a href="https://go.checkout.almaghrib.org/quranflow" target="_blank" class="font-medium underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">View Live<span aria-hidden="true"> &#8599;</span></a>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Full-stack checkout system for a US-based educational platform. Currently processing real payments for live users.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>Laravel</li><li>Inertia.js</li><li>React</li><li>Stripe</li><li>TypeScript</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>Laravel backend with Inertia.js bridging to React frontend</li>
+                                <li>Stripe integration for payment processing</li>
+                                <li>External API integrations</li>
+                                <li>Full checkout flow: cart, payment, confirmation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Learning Management Platform -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-teal-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded">SOLE DEVELOPER</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Multi-Branch Learning Management Platform</h3>
-                <p class="text-gray-600 mb-4">
-                    Built from an empty repository, February 2026 to present. A Laravel 12 API behind four separate dashboards for admins, teachers, students and parents.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- REST API with 240+ endpoints, Sanctum auth and role-based access</li>
-                        <li>- Service-layer architecture with audit logging</li>
-                        <li>- Pest and Playwright test suite, 1,000+ automated tests</li>
-                        <li>- Academic modules: attendance, digital gradebook with result cards, fee management with auto-generated challans, timetable with conflict detection</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Next.js</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MUI</span>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Pest</span>
-                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Playwright</span>
-                </div>
-            </div>
+                <!-- Learning Management Platform -->
+                <article class="py-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">Multi-Branch Learning Management Platform</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-ink-2">SOLE DEVELOPER</span>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Built from an empty repository, February 2026 to present. A Laravel 12 API behind four separate dashboards for admins, teachers, students and parents.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>Laravel</li><li>Next.js</li><li>React</li><li>MUI</li><li>Pest</li><li>Playwright</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>REST API with 240+ endpoints, Sanctum auth and role-based access</li>
+                                <li>Service-layer architecture with audit logging</li>
+                                <li>Pest and Playwright test suite, 1,000+ automated tests</li>
+                                <li>Academic modules: attendance, digital gradebook with result cards, fee management with auto-generated challans, timetable with conflict detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Saudi B2B ERP -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-indigo-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">CONTRACT</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Saudi B2B ERP</h3>
-                <p class="text-gray-600 mb-4">
-                    Contract work on an ERP covering accounting, sales, inventory and POS, February to May 2026.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- Saudi VAT return report built end to end, with bilingual Arabic and English PDF export</li>
-                        <li>- Three Excel bulk-import pipelines, each built end to end in Laravel and Angular</li>
-                        <li>- V2 financial reports: Profit &amp; Loss end to end, plus the Trial Balance backend and the Balance Sheet front end</li>
-                        <li>- Angular front end for the analytics and inventory modules</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
-                    <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">Angular</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                </div>
-            </div>
+                <!-- Saudi B2B ERP -->
+                <article class="py-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">Saudi B2B ERP</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-ink-2">CONTRACT</span>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Contract work on an ERP covering accounting, sales, inventory and POS, February to May 2026.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>Laravel</li><li>Angular</li><li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>Saudi VAT return report built end to end, with bilingual Arabic and English PDF export</li>
+                                <li>Three Excel bulk-import pipelines, each built end to end in Laravel and Angular</li>
+                                <li>V2 financial reports: Profit &amp; Loss end to end, plus the Trial Balance backend and the Balance Sheet front end</li>
+                                <li>Angular front end for the analytics and inventory modules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Fee Manager -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-blue-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">10+ YEARS PRODUCTION</span>
-                    <a href="https://ilmversity.com/" target="_blank" class="text-blue-600 hover:text-blue-800 text-xs font-medium underline">Visit Ilmversity</a>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Fee Manager - SaaS School Management</h3>
-                <p class="text-gray-600 mb-4">
-                    Complete financial module for a SaaS-based school management system. Built from scratch, serving multiple schools since 2016, and still taking new features.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- 48 models, 20 controllers, complex business logic</li>
-                        <li>- Payment gateway integrations: Kuickpay, MeezanBank, PayPro</li>
-                        <li>- Multi-level fee structures: discounts, scholarships, installments</li>
-                        <li>- Automated reminders and comprehensive reporting</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
-                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Yii</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Payment APIs</span>
-                </div>
-            </div>
+                <!-- Fee Manager -->
+                <article class="py-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">Fee Manager - SaaS School Management</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-accent">10+ YEARS PRODUCTION</span>
+                            <a href="https://ilmversity.com/" target="_blank" class="font-medium underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Visit Ilmversity<span aria-hidden="true"> &#8599;</span></a>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Complete financial module for a SaaS-based school management system. Built from scratch, serving multiple schools since 2016, and still taking new features.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>PHP</li><li>Yii</li><li>MySQL</li><li>Payment APIs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>48 models, 20 controllers, complex business logic</li>
+                                <li>Payment gateway integrations: Kuickpay, MeezanBank, PayPro</li>
+                                <li>Multi-level fee structures: discounts, scholarships, installments</li>
+                                <li>Automated reminders and comprehensive reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- HR Manager -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-purple-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">PRODUCTION</span>
-                    <a href="https://ilmversity.com/" target="_blank" class="text-purple-600 hover:text-purple-800 text-xs font-medium underline">Visit Ilmversity</a>
-                </div>
-                <h3 class="text-xl font-bold mb-2">HR Manager - SaaS School Management</h3>
-                <p class="text-gray-600 mb-4">
-                    Full payroll management module with dynamic salary components and attendance integration.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- Dynamic salary components configuration</li>
-                        <li>- Attendance-based calculations (fines, bonuses)</li>
-                        <li>- Payslip generation and history tracking</li>
-                        <li>- Biometric attendance system integration</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
-                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Yii</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                </div>
-            </div>
+                <!-- HR Manager -->
+                <article class="py-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">HR Manager - SaaS School Management</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-accent">PRODUCTION</span>
+                            <a href="https://ilmversity.com/" target="_blank" class="font-medium underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Visit Ilmversity<span aria-hidden="true"> &#8599;</span></a>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Full payroll management module with dynamic salary components and attendance integration.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>PHP</li><li>Yii</li><li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>Dynamic salary components configuration</li>
+                                <li>Attendance-based calculations (fines, bonuses)</li>
+                                <li>Payslip generation and history tracking</li>
+                                <li>Biometric attendance system integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Student Portal -->
-            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">COMPLETED</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Student Portal & Admin Console</h3>
-                <p class="text-gray-600 mb-4">
-                    Modern academic management system with comprehensive admin dashboard for a US-based educational platform.
-                </p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-sm text-gray-700 mb-2">Technical Implementation:</h4>
-                    <ul class="text-gray-600 text-sm space-y-1">
-                        <li>- 114 React components with complex state management</li>
-                        <li>- 28-page admin console covering all functions</li>
-                        <li>- Redux-Saga for async operations</li>
-                        <li>- Material-UI component library</li>
-                    </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Next.js</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Redux-Saga</span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MUI</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">TypeScript</span>
-                </div>
+                <!-- Student Portal -->
+                <article class="pt-12">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.015em]">Student Portal &amp; Admin Console</h3>
+                        <p class="flex items-center gap-5 text-[13px] font-semibold">
+                            <span class="label-case text-ink-2">COMPLETED</span>
+                        </p>
+                    </div>
+                    <div class="mt-5 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div>
+                            <p class="text-[17px] leading-relaxed text-ink-2">Modern academic management system with comprehensive admin dashboard for a US-based educational platform.</p>
+                            <ul class="stack mt-5 flex flex-wrap text-[14px] font-medium" aria-label="Tech stack">
+                                <li>Next.js</li><li>React</li><li>Redux-Saga</li><li>MUI</li><li>TypeScript</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[13px] font-semibold">Technical Implementation:</h4>
+                            <ul class="mt-3 list-disc space-y-2 pl-4 text-[15px] leading-normal text-ink-2 marker:text-ink-3">
+                                <li>114 React components with complex state management</li>
+                                <li>28-page admin console covering all functions</li>
+                                <li>Redux-Saga for async operations</li>
+                                <li>Material-UI component library</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </div>
         </section>
 
         <!-- Skills -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900">Technical Skills</h2>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-white rounded-lg p-4 shadow">
-                    <h3 class="font-semibold text-gray-700 mb-2">Backend</h3>
-                    <p class="text-gray-600">Laravel, PHP, Yii, RESTful APIs</p>
+        <section id="skills" class="mx-auto max-w-page scroll-mt-16 px-6 lg:px-10">
+            <div class="grid gap-x-12 gap-y-6 border-t border-rule pb-20 pt-16 lg:grid-cols-12 lg:pt-20">
+            <h2 class="text-[1.75rem] font-semibold leading-tight tracking-[-0.02em] lg:col-span-3">Technical Skills</h2>
+            <dl class="grid border-t border-rule sm:grid-cols-2 lg:col-span-9">
+                <div class="border-b border-rule py-5 sm:pr-8">
+                    <dt class="text-[13px] font-semibold text-ink-2">Backend</dt>
+                    <dd class="mt-1.5 text-lg font-medium">Laravel, PHP, Yii, RESTful APIs</dd>
                 </div>
-                <div class="bg-white rounded-lg p-4 shadow">
-                    <h3 class="font-semibold text-gray-700 mb-2">Frontend</h3>
-                    <p class="text-gray-600">React, Inertia.js, Next.js, MUI</p>
+                <div class="border-b border-rule py-5 sm:border-l sm:pl-8">
+                    <dt class="text-[13px] font-semibold text-ink-2">Frontend</dt>
+                    <dd class="mt-1.5 text-lg font-medium">React, Inertia.js, Next.js, MUI</dd>
                 </div>
-                <div class="bg-white rounded-lg p-4 shadow">
-                    <h3 class="font-semibold text-gray-700 mb-2">Database</h3>
-                    <p class="text-gray-600">MySQL, Complex Schema Design, Migrations</p>
+                <div class="border-b border-rule py-5 sm:pr-8">
+                    <dt class="text-[13px] font-semibold text-ink-2">Database</dt>
+                    <dd class="mt-1.5 text-lg font-medium">MySQL, Complex Schema Design, Migrations</dd>
                 </div>
-                <div class="bg-white rounded-lg p-4 shadow">
-                    <h3 class="font-semibold text-gray-700 mb-2">Payments</h3>
-                    <p class="text-gray-600">Stripe, Kuickpay, MeezanBank, PayPro</p>
+                <div class="border-b border-rule py-5 sm:border-l sm:pl-8">
+                    <dt class="text-[13px] font-semibold text-ink-2">Payments</dt>
+                    <dd class="mt-1.5 text-lg font-medium">Stripe, Kuickpay, MeezanBank, PayPro</dd>
                 </div>
-            </div>
+            </dl>
+        </div>
         </section>
 
         <!-- Work History -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900">Work History</h2>
-            <div class="space-y-4">
-                <div class="flex gap-4">
-                    <div class="text-gray-500 text-sm w-32 flex-shrink-0">2026 - Present</div>
+        <section id="work" class="mx-auto max-w-page scroll-mt-16 px-6 lg:px-10">
+            <div class="grid gap-x-12 gap-y-6 border-t border-rule pb-20 pt-16 lg:grid-cols-12 lg:pt-20">
+            <h2 class="text-[1.75rem] font-semibold leading-tight tracking-[-0.02em] lg:col-span-3">Work History</h2>
+            <ol class="divide-y divide-rule border-y border-rule lg:col-span-9">
+                <li class="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span class="tabular pt-px text-[15px] text-ink-2">2026 - Present</span>
                     <div>
                         <h3 class="font-semibold">Senior Full Stack Developer (Part-time)</h3>
-                        <p class="text-gray-600">Multi-branch learning management platform (Remote)</p>
+                        <p class="text-ink-2">Multi-branch learning management platform (Remote)</p>
                     </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="text-gray-500 text-sm w-32 flex-shrink-0">Feb - May 2026</div>
+                </li>
+                <li class="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span class="tabular pt-px text-[15px] text-ink-2">Feb - May 2026</span>
                     <div>
                         <h3 class="font-semibold">Senior Full Stack Developer (Contract)</h3>
-                        <p class="text-gray-600">Saudi B2B ERP (Remote)</p>
+                        <p class="text-ink-2">Saudi B2B ERP (Remote)</p>
                     </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="text-gray-500 text-sm w-32 flex-shrink-0">2020 - 2026</div>
+                </li>
+                <li class="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span class="tabular pt-px text-[15px] text-ink-2">2020 - 2026</span>
                     <div>
                         <h3 class="font-semibold">Senior Full Stack Developer</h3>
-                        <p class="text-gray-600">US-based educational platform (Remote)</p>
+                        <p class="text-ink-2">US-based educational platform (Remote)</p>
                     </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="text-gray-500 text-sm w-32 flex-shrink-0">2016 - Present</div>
+                </li>
+                <li class="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span class="tabular pt-px text-[15px] text-ink-2">2016 - Present</span>
                     <div>
                         <h3 class="font-semibold">Senior Full Stack Developer</h3>
-                        <p class="text-gray-600">SaaS School Management System</p>
+                        <p class="text-ink-2">SaaS School Management System</p>
                     </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="text-gray-500 text-sm w-32 flex-shrink-0">2010 - 2016</div>
+                </li>
+                <li class="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span class="tabular pt-px text-[15px] text-ink-2">2010 - 2016</span>
                     <div>
                         <h3 class="font-semibold">Full Stack PHP Developer</h3>
-                        <p class="text-gray-600">Freelance</p>
+                        <p class="text-ink-2">Freelance</p>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ol>
+        </div>
         </section>
 
         <!-- Education -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 text-gray-900">Education</h2>
-            <div class="bg-white rounded-lg p-4 shadow">
-                <h3 class="font-semibold">Bachelor of Science in Computer Engineering</h3>
-                <p class="text-gray-600">FAST-NUCES, Lahore (2006 - 2010)</p>
+        <section id="education" class="mx-auto max-w-page scroll-mt-16 px-6 lg:px-10">
+            <div class="grid gap-x-12 gap-y-6 border-t border-rule pb-24 pt-16 lg:grid-cols-12 lg:pt-20">
+            <h2 class="text-[1.75rem] font-semibold leading-tight tracking-[-0.02em] lg:col-span-3">Education</h2>
+            <div class="grid gap-1 border-y border-rule py-4 sm:grid-cols-[10rem_1fr] sm:gap-6 lg:col-span-9">
+                <span class="hidden sm:block" aria-hidden="true"></span>
+                <div>
+                    <h3 class="font-semibold">Bachelor of Science in Computer Engineering</h3>
+                    <p class="text-ink-2">FAST-NUCES, Lahore (2006 - 2010)</p>
+                </div>
             </div>
+        </div>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="mb-4">Open to remote opportunities</p>
-            <div class="flex justify-center gap-6 text-sm">
-                <a href="mailto:kkhan.talha@gmail.com" class="hover:text-blue-200 transition">kkhan.talha@gmail.com</a>
-                <a href="https://github.com/talhamasoodkhan" target="_blank" class="hover:text-blue-200 transition">github.com/talhamasoodkhan</a>
+    <footer id="contact" class="mx-auto max-w-page px-6 pb-16 lg:px-10">
+        <div class="h-[4px] border-y border-ink"></div>
+        <div class="flex flex-wrap items-end justify-between gap-8 pt-10">
+            <p class="text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">Open to remote opportunities</p>
+            <div class="flex flex-wrap gap-6 text-[15px]">
+                <a href="mailto:kkhan.talha@gmail.com" class="underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">kkhan.talha@gmail.com</a>
+                <a href="https://github.com/talhamasoodkhan" target="_blank" class="underline decoration-rule decoration-2 underline-offset-4 transition-colors duration-200 hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">github.com/talhamasoodkhan</a>
             </div>
         </div>
     </footer>
